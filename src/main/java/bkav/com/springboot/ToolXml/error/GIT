@@ -1,0 +1,4 @@
+B1: export no_proxy=gitbsc.bkav.com
+B2: git add .
+B3: git commit -m "loi nhan"
+B4: git push origin HiepH

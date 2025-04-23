@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.example.Main
+Created-By: 17.0.14 (Ubuntu)
+
