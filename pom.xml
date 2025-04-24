@@ -36,15 +36,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
+        <!-- Lombok dependency -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- Jakarta Annotations dependency -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>2.0.0</version> <!-- Use the appropriate version -->
         </dependency>
     </dependencies>
 
@@ -58,9 +62,22 @@
                 <configuration>
                     <source>${java.version}</source> <!-- Sử dụng Java 17 -->
                     <target>${java.version}</target> <!-- Sử dụng Java 17 -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.24</version> <!-- Ensure this matches your Lombok version -->
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <mainClass>com.example.demo.ToolXml.FileToolApplication</mainClass>
+                    </configuration>
+                </plugin>
             <!-- Spring Boot Maven Plugin for building and running the application as a jar -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -76,5 +93,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
